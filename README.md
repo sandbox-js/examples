@@ -56,11 +56,15 @@ var config = {
 Alternatively, you can run via embedded web server:
 
 `$ npm install --global gulp`
+
 `$ cd ./deployr`
+
 `$ npm install`
+
 `$gulp start`
 
-Open browser to http://localhost:8080/examples/PATH_TO_EXAMPLE_FILE.html`
+Open your browser to _http://localhost:8080/examples/_ and select an example 
+.html file
 
 __Node.js:__
 
