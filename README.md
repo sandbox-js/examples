@@ -20,13 +20,18 @@ Examples
 ========
 
 The DeployR JavaScript client library ships with a set of small examples under 
-the __/deployr/examples__ directory that run in both the browser and Node.js 
+the __./deployr/examples__ directory that run in both the browser and Node.js 
 environments. The intention of the examples are to demonstrate the syntax and 
 core areas of the JavaScript API. They are not intended to be a tutorial on how 
 to write web applications.
 
 We encourage you to start here and customize these examples and adapt them to 
 suit your needs as you explore the API.
+
+- api: Introduces the core areas of the JavaScript API.
+
+- tutorial: Introduces the top-level R analytics services exposed on the DeployR 
+API.
 
 Building
 ========
@@ -51,12 +56,12 @@ Shortcuts
 ---------
 
  * `gulp` Runs a build.
- * `gulp start` Runs a build and starts a local webserver with LiveReload on 
- port 8080 rebuilding on file changes.
+ * `gulp start` Runs a build and starts a local webserver with LiveReload 
+ (port __8080__) rebuilding on file changes.
 
 Destination
 -----------
-The browser build destination is located in the _./browser_ directory.
+The browser build destination is located in the __./browser__ directory.
 
 Tests
 =====
