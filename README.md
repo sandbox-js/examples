@@ -61,7 +61,7 @@ The browser build destination is located in the _./browser_ directory.
 Tests
 =====
 
-Comming soon...
+Coming soon...
 
 
 License
