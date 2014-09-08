@@ -2,7 +2,7 @@ JavaScript Client Library for DeployR
 =====================================
 
 The JavaScript client library is a light-weight fluent API used to communcate 
-with DeployR from both the Browser and Node.js environments. It is crafted for 
+with DeployR from both the browser and Node.js environments. It is crafted for 
 flexibility, readability, and a low learning curve.
 
 Links
@@ -13,13 +13,14 @@ Links
   * [Installation](http://deployr.revolutionanalytics.com/documents/dev/client-jsdoc/#install)  
   * [Simple examples](#examples)
   * [Gulp, for building](#building)
+  * [Tests](#tests)
   * [License](#license)
 
 Examples
 ========
 
 The DeployR JavaScript client library ships with a set of small examples under 
-the __/deployr/examples__ directory that run in both the Browser and Node.js 
+the __/deployr/examples__ directory that run in both the browser and Node.js 
 environments. The intention of the examples are to demonstrate the syntax and 
 core areas of the JavaScript API. They are not intended to be a tutorial on how 
 to write web applications.
@@ -44,7 +45,7 @@ After cloning you can simply do an NPM install.
 
 `$ npm install`
 
-This will install the development tools needed locally.
+This will install the development tools needed to build locally.
 
 Shortcuts
 ---------
@@ -55,7 +56,13 @@ Shortcuts
 
 Destination
 -----------
-The build destination rests in the _browser_ directory.
+The browser build destination is located in the _./browser_ directory.
+
+Tests
+=====
+
+Comming soon...
+
 
 License
 =======
