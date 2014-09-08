@@ -53,7 +53,7 @@ var config = {
 };		
 ```
 
-Alternatively, you can run via embedded web server:
+Alternatively, you can run via the embedded web server:
 
 `$ npm install --global gulp`
 
@@ -69,7 +69,7 @@ Open your browser to _http://localhost:8080/examples/_ and select an example
 __Node.js:__
 
 Set the DeployR endpoint and basic authentication credentials in 
-```./examples/config.json```
+`./examples/config.json`
 
 ```
 {
