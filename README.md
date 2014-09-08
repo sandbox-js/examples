@@ -30,8 +30,57 @@ suit your needs as you explore the API.
 
 - __./examples/api:__ Introduces the core areas of the JavaScript API.
 
-- __./examples/tutorial:__ Introduces the top-level R analytics services exposed on the DeployR 
-API.
+- __./examples/tutorial:__ Introduces the top-level R analytics services exposed 
+on the DeployR API.
+
+Running
+-------
+
+__Browser:__
+
+- Copy the _.html_ files under `./examples` to your webserver
+- Inside each of the .html files set the DeployR endpoint and basic 
+authentication credentials:
+
+```
+var config = {
+	"deployrEndpoint": "http://dhost:port",
+	"cors": true,
+	"credentials": {
+	   "username": "USERNAME",
+	   "password": "PASSWORD"
+	}
+};		
+```
+
+Alternatively, you can run via embedded web server:
+
+`$ npm install --global gulp`
+`$ cd ./deployr`
+`$ npm install`
+`$gulp start`
+
+Open browser to http://localhost:8080/examples/PATH_TO_EXAMPLE_FILE.html`
+
+__Node.js:__
+
+Set the DeployR endpoint and basic authentication credentials in 
+```./examples/config.json```
+
+```
+{
+	"deployrEndpoint": "http://dhost:port",
+	"credentials": {
+	   "username": "USERNAME",
+	   "password": "PASSWORD"
+	}
+}
+
+```
+
+From the command line run one of the Node.js examples:
+
+```$ node ./examples/PATH_TO_EXAMPLE_FILE.js```
 
 Building
 ========
