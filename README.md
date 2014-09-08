@@ -28,9 +28,9 @@ to write web applications.
 We encourage you to start here and customize these examples and adapt them to 
 suit your needs as you explore the API.
 
-- api: Introduces the core areas of the JavaScript API.
+- __./examples/api:__ Introduces the core areas of the JavaScript API.
 
-- tutorial: Introduces the top-level R analytics services exposed on the DeployR 
+- __./examples/tutorial:__ Introduces the top-level R analytics services exposed on the DeployR 
 API.
 
 Building
