@@ -1,8 +1,8 @@
-The JavaScript Client Library for DeployR
-=========================================
+JavaScript Client Library for DeployR
+=====================================
 
 The JavaScript client library is a light-weight fluent API used to communcate 
-with DeployR from both the browser and Node.js environments. It is crafted for 
+with DeployR from both the Browser and Node.js environments. It is crafted for 
 flexibility, readability, and a low learning curve.
 
 Links
@@ -11,6 +11,7 @@ Links
   * [User Guide Documentation](http://deployr.revolutionanalytics.com/documents/dev/client-jsdoc)
   * [API Documentation](http://deployr.revolutionanalytics.com/documents/dev/client-jsdoc/api/)
   * [Installation](http://deployr.revolutionanalytics.com/documents/dev/client-jsdoc/#install)  
+  * [Simple examples](#examples)
   * [Gulp, for building](#building)
   * [License](#license)
 
@@ -25,7 +26,6 @@ to write web applications.
 
 We encourage you to start here and customize these examples and adapt them to 
 suit your needs as you explore the API.
-
 
 Building
 ========
@@ -42,17 +42,20 @@ First you need to install `gulp` (`$ npm install --global gulp`)
 
 After cloning you can simply do an NPM install.
 
-`npm install`
+`$ npm install`
 
-This will install the tools needed locally.
+This will install the development tools needed locally.
 
 Shortcuts
 ---------
 
  * `gulp` Runs a build.
  * `gulp start` Runs a build and starts a local webserver with LiveReload on 
- port 8080.
+ port 8080 rebuilding on file changes.
 
+Destination
+-----------
+The build destination rests in the _browser_ directory.
 
 License
 =======
