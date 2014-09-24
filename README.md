@@ -83,13 +83,12 @@ to write web applications.
 We encourage you to start here and customize these examples and adapt them to 
 suit your needs as you explore the API.
 
-- __./examples/tutorial:__ Introduces the three RBroker runtimes available. 
+__./examples/tutorial:__ Introduces the three RBroker runtimes available. 
 These runtimes are identified as:
 
- 1. Discrete Task Runtime
- 2. Pooled Task Runtime
- 3. Background Task Runtime
-
+1. Discrete Task Runtime
+2. Pooled Task Runtime
+3. Background Task Runtime
 
 Running
 -------
