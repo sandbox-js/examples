@@ -56,16 +56,16 @@ and automatically install the necessary local runtime dependencies listed there.
 by first installing it using the directions outlined [here](http://deployr.revolutionanalytics.com/documents/dev/client-jsdoc/#install). 
 
 4. Once installed copy the entire ```/deployr``` directory into ```./rbroker/node_modules```.
-This step is needed because the JavaScript Client Library for DeployR is *not yet* 
-registered as a public npm package. This is comming soon.
+This step is needed because the JavaScript Client Library for DeployR is 
+**not yet** registered as a public npm package. This is comming soon.
 
-4. Similar to the JavaScript Client Library for DeployR, the JavaScript RBroker 
-library is *not yet* registered as a public npm package either. After running 
-npm install --production in step 2, you will need to manually copy the entire 
-```/rbroker/``` directory into the ```node_modules``` directory of the Node.js 
-project that will be using it.
+5. Similar to the JavaScript Client Library for DeployR, the JavaScript RBroker 
+library is **not yet** registered as a public npm package either. After running 
+```npm install --production``` in step 2, you will need to manually copy the 
+entire ```/rbroker/``` directory into the ```node_modules``` directory of the 
+Node.js project that will be using it.
 
-5. ```require``` the directory:
+6. ```require``` the directory:
 
 ```
 var rbroker = require('rbroker');
@@ -83,10 +83,13 @@ to write web applications.
 We encourage you to start here and customize these examples and adapt them to 
 suit your needs as you explore the API.
 
-- __./examples/js-api:__ Introduces the core areas of the JavaScript API.
+- __./examples/tutorial:__ Introduces the three RBroker runtimes available. 
+These runtimes are identified as:
 
-- __./examples/tutorial:__ Introduces the top-level R analytics services exposed 
-on the DeployR API.
+ 1. Discrete Task Runtime
+ 2. Pooled Task Runtime
+ 3. Background Task Runtime
+
 
 Running
 -------
