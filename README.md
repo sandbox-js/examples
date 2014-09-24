@@ -1,26 +1,81 @@
-JavaScript Client Library for DeployR
-=====================================
+JavaScript RBroker Framework for DeployR
+========================================
 
-The JavaScript client library is a light-weight fluent API used to communcate 
-with DeployR from both the browser and Node.js environments. It is crafted for 
-flexibility, readability, and a low learning curve.
+The JavaScript RBroker Framework provides a simple yet powerful API that 
+supports the rapid integration of R Analytics inside any browser or Node.js 
+based application. Simply define an _RTask_, submit your task to an instance of 
+_RBroker_ and then retrieve your task results. It really is that simple.
 
 Links
 -----
 
-  * [User Guide Documentation](http://deployr.revolutionanalytics.com/documents/dev/client-jsdoc)
-  * [API Documentation](http://deployr.revolutionanalytics.com/documents/dev/client-jsdoc/api/)
-  * [Installation](http://deployr.revolutionanalytics.com/documents/dev/client-jsdoc/#install)  
+  * [Tutorial](http://deployr.revolutionanalytics.com/documents/dev/rbroker/)
+  * [API Documentation](http://deployr.revolutionanalytics.com/documents/dev/rbroker-jsdoc)
+  * [Installation](#installationl)  
   * [Simple examples](#examples)
   * [Gulp, for building](#building)
   * [Tests](#tests)
   * [License](#license)
 
+Installation
+============
+
+Install the JavaScript RBroker library using the instructions for your 
+particular environment:
+
+Browser
+-------
+
+```
+<!-- Latest compiled raw JavaScript variation -->
+<script src="./browser/deployr.js"></script>
+```
+
+Or
+
+```
+<!-- Latest compiled minified JavaScript variation -->
+<script src="./browser/deployr.min.js"></script>
+```
+
+Node.js
+-------
+
+[Download and install](http://nodejs.org/download/) Node.js, which includes npm.
+npm, which stands for _node packaged modules_, is a way to manage development 
+dependencies through Node.js.
+
+From the command line:
+
+1. Navigate to the root ```/rbroker/``` directory.
+
+2. Run ```npm install --production```. npm will look at the package.json file 
+and automatically install the necessary local runtime dependencies listed there.
+
+3. Include the JavaScript Client Library for DeployR ```deployr``` dependency 
+by first installing it using the directions outlined [here](http://deployr.revolutionanalytics.com/documents/dev/client-jsdoc/#install). 
+
+4. Once installed copy the entire ```/deployr``` directory into ```./rbroker/node_modules```.
+This step is needed because the JavaScript Client Library for DeployR is *not yet* 
+registered as a public npm package. This is comming soon.
+
+4. Similar to the JavaScript Client Library for DeployR, the JavaScript RBroker 
+library is *not yet* registered as a public npm package either. After running 
+npm install --production in step 2, you will need to manually copy the entire 
+```/rbroker/``` directory into the ```node_modules``` directory of the Node.js 
+project that will be using it.
+
+5. ```require``` the directory:
+
+```
+var rbroker = require('rbroker');
+````
+
 Examples
 ========
 
-The DeployR JavaScript client library ships with a set of small examples under 
-the __./deployr/examples__ directory that run in both the browser and Node.js 
+The JavaScript RBroker library ships with a set of small examples under the 
+__./rbroker/examples__ directory that run in both the browser and Node.js 
 environments. The intention of the examples are to demonstrate the syntax and 
 core areas of the JavaScript API. They are not intended to be a tutorial on how 
 to write web applications.
@@ -28,7 +83,7 @@ to write web applications.
 We encourage you to start here and customize these examples and adapt them to 
 suit your needs as you explore the API.
 
-- __./examples/api:__ Introduces the core areas of the JavaScript API.
+- __./examples/js-api:__ Introduces the core areas of the JavaScript API.
 
 - __./examples/tutorial:__ Introduces the top-level R analytics services exposed 
 on the DeployR API.
@@ -39,32 +94,34 @@ Running
 __Browser:__
 
 - Copy the _.html_ files under `./examples` to your webserver
-- Inside each of the .html files set the DeployR endpoint and basic 
-authentication credentials:
+- Copy the `./examples/config.json` file under `./examples` to your webserver
+- Set the DeployR endpoint and basic authentication credentials in 
+`./examples/config.json`
 
 ```
-var config = {
-	"deployrEndpoint": "http://dhost:port",
-	"cors": true,
+{
+	"host": "http://dhost:port",
+	"cors:" true,
 	"credentials": {
-	   "username": "USERNAME",
+	   "username": "testuser",
 	   "password": "PASSWORD"
 	}
-};		
+}	
 ```
 
-Alternatively, you can run via the embedded web server:
+Alternatively, you can run the examples without moving them via the embedded 
+web server:
 
 `$ npm install --global gulp`
 
-`$ cd ./deployr`
+`$ cd ./rbroker`
 
 `$ npm install`
 
 `$gulp start`
 
 Open your browser to _http://localhost:8080/examples/_ and select an example 
-.html file
+.html file to run.
 
 __Node.js:__
 
@@ -73,9 +130,9 @@ Set the DeployR endpoint and basic authentication credentials in
 
 ```
 {
-	"deployrEndpoint": "http://dhost:port",
+	"host": "http://dhost:port",
 	"credentials": {
-	   "username": "USERNAME",
+	   "username": "testuser",
 	   "password": "PASSWORD"
 	}
 }
@@ -93,11 +150,10 @@ This section only pertains to _Browser_ environments.
 
 Our dev and release builds are handled by [gulp.js](http://gulpjs.com/).
 
-
 Installation
 ------------
 
-First you need to install `gulp` (`$ npm install --global gulp`)
+First you need to install `gulp` (`$ sudo npm install --global gulp`)
 
 After cloning you can simply do an NPM install.
 
@@ -120,7 +176,6 @@ Tests
 =====
 
 Coming soon...
-
 
 License
 =======
