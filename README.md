@@ -9,6 +9,7 @@ _RBroker_ and then retrieve your task results. It really is that simple.
 Links
 -----
 
+  * [Download](http://deployr.revolutionanalytics.com/docanddown/#rbroker)
   * [Tutorial](http://deployr.revolutionanalytics.com/documents/dev/rbroker/)
   * [API Documentation](http://deployr.revolutionanalytics.com/documents/dev/rbroker-jsdoc)
   * [Installation](#installationl)  
@@ -17,25 +18,55 @@ Links
   * [Tests](#tests)
   * [License](#license)
 
-Installation
+Environments
 ============
 
-Install the JavaScript RBroker library using the instructions for your 
-particular environment:
+We recommend you [download and install](http://nodejs.org/download/) Node.js.
+It is __not__ a requirement for the browser however using the JavaScript client 
+library from within a server or from the command line in addition to the browser
+can be powerful!
 
 Browser
 -------
 
+If your environment is the browser the JavaScript RBroker Framework can be found
+here:
+
 ```
+./rbroker/browser/rbroker.js
+./rbroker/browser/rbroker.min.js
+```
+
+Node.js
+-------
+
+If your environment is Node then the entire root ```./rbroker/``` directory 
+represents the JavaScript RBroker Framework as it uses the same source for both 
+environments.
+
+Installation
+============
+
+Browser
+-------
+
+Using the browser version:
+
+```bash
+./rbroker/browser/rbroker.js
+./rbroker/browser/rbroker.min.js
+``` 
+
+Include either one on your page in the `<script>` tag:
+
+```html
 <!-- Latest compiled raw JavaScript variation -->
-<script src="./browser/deployr.js"></script>
-```
+<script src="./browser/rbroker.js"></script>
 
 Or
 
-```
 <!-- Latest compiled minified JavaScript variation -->
-<script src="./browser/deployr.min.js"></script>
+<script src="./browser/rbroker.min.js"></script>
 ```
 
 Node.js
@@ -60,12 +91,12 @@ This step is needed because the JavaScript Client Library for DeployR is
 **not yet** registered as a public npm package. This is comming soon.
 
 5. Similar to the JavaScript Client Library for DeployR, the JavaScript RBroker 
-library is **not yet** registered as a public npm package either. After running 
-```npm install --production``` in step 2, you will need to manually copy the 
-entire ```/rbroker/``` directory into the ```node_modules``` directory of the 
-Node.js project that will be using it.
+library is **not yet** registered as a published npm package either. After 
+running ```npm install --production``` in step 2, you will need to manually copy 
+the entire ```/rbroker/``` directory into the ```node_modules``` directory of 
+the Node.js project that will be using it.
 
-6. ```require``` the directory:
+6. ```require``` the directory in your code:
 
 ```
 var rbroker = require('rbroker');
@@ -90,6 +121,22 @@ These runtimes are identified as:
 2. Pooled Task Runtime
 3. Background Task Runtime
 
+R Analytics File Dependencies
+-----------------------------
+
+The R scripts and data models used by these example applications are bundled by 
+default within the DeployR repository within the tutorial-rbroker directory 
+owned by testuser.
+
+However, if for any reason your DeployR repository does not contain
+these fiels you can add them using the DeployR Repository Manager as
+follows:
+
+1. Log in as testuser into the Repository Manager
+2. Create a new directory called tutorial-rbroker
+3. Upload each of the files found in the ./analytics directory
+4. Set the access control on 5SecondNoOp.R to Public.
+
 Running
 -------
 
@@ -106,13 +153,13 @@ __Browser:__
 	"cors:" true,
 	"credentials": {
 	   "username": "testuser",
-	   "password": "PASSWORD"
+	   "password": "changeme"
 	}
 }	
 ```
 
 Alternatively, you can run the examples without moving them via the embedded 
-web server:
+web server if you have Node.js installed:
 
 `$ npm install --global gulp`
 
@@ -135,7 +182,7 @@ Set the DeployR endpoint and basic authentication credentials in
 	"host": "http://dhost:port",
 	"credentials": {
 	   "username": "testuser",
-	   "password": "PASSWORD"
+	   "password": "changeme"
 	}
 }
 
